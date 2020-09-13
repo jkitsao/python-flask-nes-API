@@ -10,12 +10,12 @@ app = Flask(__name__)
 
 @app.route('/')
 def Index():
-    newsapi = NewsApiClient(api_key="b0f75ce660c0466a9a98c2478f8abb62")
+    newsapi = NewsApiClient(api_key="75448b4e83b542a1b7f5b61ff76e6b52")
     topheadlines = newsapi.get_sources()
 
     # print(topheadlines)
     articles = topheadlines['sources']
-    print(articles)
+    # print(articles)
     name = []
     desc = []
     url = []
@@ -35,7 +35,7 @@ def Index():
 
 
     mylist = zip(name, desc, url,country)
-
+    print(mylist)
 
     return render_template('index.html', context = mylist)
 
@@ -66,4 +66,4 @@ def bbc():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+     app.run(debug=True) 

@@ -17,13 +17,17 @@
     </div>
 
     <div class="container">
-      {% for i in context %}
+      {% for a,b,c,d in context %}
 
-      <img src="{{i}}" alt="" />
+      <img src="" alt="" />
       <h3>News:</h3>
-      {{i.name}}
+      {{a}}
+
+      <h4>{{b}}</h4>
+      <h4>{{c}}</h4>
+
       <h4>Description:</h4>
-      {{des}} {% endfor %}
+      {{b}} {% endfor %}
     </div>
   </body>
 </html>
