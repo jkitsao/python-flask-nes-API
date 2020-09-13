@@ -10,32 +10,95 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    />
+    <!-- Bootstrap core CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Material Design Bootstrap -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
-   <!-- navigation bar -->
-   <nav class="navbar navbar-expand-lg navbar-dark bg-primary"">
-    <a class="navbar-brand" href="#">flask-news-api</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
+    <!-- navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary py-3 mb-4">
+      <a class="navbar-brand" href="#">flask-news-api</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
+    </nav>
+    <!-- end of navbar -->
+
+    <div class="container">
+      <div
+        class="jumbotron card card-image"
+        style="
+          background-image: url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg);
+        "
+      >
+        <div class="text-white text-center py-5 px-4">
+          <div>
+            <h2 class="card-title h1-responsive pt-3 mb-5 font-bold">
+              <strong>Get the latest news and stories with us</strong>
+            </h2>
+            <p class="mx-5 mb-5">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat
+              fugiat, laboriosam, voluptatem, optio vero odio nam sit officia
+              accusamus minus error nisi architecto nulla ipsum dignissimos.
+              Odit sed qui, dolorum!
+            </p>
+            <a class="btn btn-outline-white btn-md"
+              ><i class="fas fa-clone left"></i> View project</a
+            >
+          </div>
+        </div>
+      </div>
     </div>
-  </nav>
-   <!-- end of navbar -->
-    <div class="container d-flex flex-wrap">
+
+    <div class="container mt-3">
       {% for a,b,c,d in context %}
 
       <!-- <img src="" alt="" />
@@ -47,7 +110,7 @@
       <h4>Description:</h4>
       {{d}}  -->
 
-      <div class="mx-1">
+      <!-- <div class="mx-1">
         <div class="card mb-3 col" style="max-width: 540px">
           <div class="row no-gutters">
             <div class="col-md-4">
@@ -67,7 +130,49 @@
             </div>
           </div>
         </div>
+      </div> -->
+      <!-- News jumbotron -->
+      <div class="jumbotron text-center hoverable p-4">
+        <!-- Grid row -->
+        <div class="row">
+          <!-- Grid column -->
+          <div class="col-md-4 offset-md-1 mx-3 my-3">
+            <!-- Featured image -->
+            <div class="view overlay">
+              <img
+                src="https://mdbootstrap.com/img/Photos/Others/laptop-sm.jpg"
+                class="img-fluid"
+                alt="Sample image for first version of blog listing"
+              />
+              <a>
+                <div class="mask rgba-white-slight"></div>
+              </a>
+            </div>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-7 text-md-left ml-3 mt-3">
+            <!-- Excerpt -->
+            <a href="#!" class="green-text">
+              <h6 class="h6 pb-1"><i class="fas fa-desktop pr-1"></i>{{d}}</h6>
+            </a>
+
+            <h4 class="h4 mb-4">{{a}}</h4>
+
+            <p class="font-weight-normal">{{b}}</p>
+            <p class="font-weight-normal">
+              by <a><strong>Carine Fox</strong></a
+              >, 19/08/2016
+            </p>
+
+            <a class="btn btn-success">Read more</a>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
       </div>
+      <!-- News jumbotron -->
       {% endfor %}
     </div>
   </body>
