@@ -12,22 +12,63 @@
     />
   </head>
   <body>
-    <div class="jumbotron" style="color: black">
-      <h1 style="color: black">Flask Simple News Web Application</h1>
+   <!-- navigation bar -->
+   <nav class="navbar navbar-expand-lg navbar-dark bg-primary"">
+    <a class="navbar-brand" href="#">flask-news-api</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
     </div>
-
-    <div class="container">
+  </nav>
+   <!-- end of navbar -->
+    <div class="container d-flex flex-wrap">
       {% for a,b,c,d in context %}
 
-      <img src="" alt="" />
-      <h3>News:</h3>
-      {{a}}
+      <!-- <img src="" alt="" />
+      <h2>{{a}}</h2>
 
-      <h4>{{b}}</h4>
+      <h3>{{b}}</h3>
       <h4>{{c}}</h4>
 
       <h4>Description:</h4>
-      {{b}} {% endfor %}
+      {{d}}  -->
+
+      <div class="mx-1">
+        <div class="card mb-3 col" style="max-width: 540px">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img
+                src="https://images.unsplash.com/photo-1557428894-56bcc97113fe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=676&q=80"
+                class="card-img"
+                alt="..."
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title text-success">{{a}}</h5>
+                <p class="card-text">{{b}}</p>
+                <p class="card-text"><small class="text-muted">{{c}}</small></p>
+                <p class="card-text"><small class="text-muted">{{d}}</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
     </div>
   </body>
 </html>
