@@ -20,7 +20,8 @@ def Index():
     desc = []
     url = []
     url = []
-    country=[]
+    category=[]
+    id=[]
 
 
     for i in range(len(articles)):
@@ -30,38 +31,48 @@ def Index():
         name.append(myarticles['name'])
         desc.append(myarticles['description'])
         url.append(myarticles['url'])
-        country.append(myarticles['country'])
+        category.append(myarticles['category'])
+        id.append(myarticles['id'])
 
 
 
-    mylist = zip(name, desc, url,country)
-    print(mylist)
+    mylist = zip(name, desc, url,category,id)
+    # print(mylist)
 
     return render_template('index.html', context = mylist)
 
 
 
-@app.route('/bbc')
-def bbc():
-    newsapi = NewsApiClient(api_key="YOUR-API-KEY")
-    topheadlines = newsapi.get_top_headlines(sources="bbc-news")
+@app.route('/sources/<source>')
+def article(source):
+    newsapi = NewsApiClient(api_key="75448b4e83b542a1b7f5b61ff76e6b52")
+    topheadlines = newsapi.get_top_headlines(sources=source)
 
     articles = topheadlines['articles']
+    print(articles)
 
     desc = []
     news = []
     img = []
+    author=[]
+    url=[]
 
     for i in range(len(articles)):
         myarticles = articles[i]
-
+        
+        
         news.append(myarticles['title'])
         desc.append(myarticles['description'])
         img.append(myarticles['urlToImage'])
+        author.append(myarticles['author'])
+        url.append(myarticles['url'])
 
-    mylist = zip(news, desc, img)
 
-    return render_template('bbc.html', context=mylist)
+        
+
+    mylist = zip(news, desc, img,author,url)
+
+    return render_template('source.html', context=mylist,source=source)
 
 
 

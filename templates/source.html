@@ -49,12 +49,9 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#"
+            <a class="nav-link" href="/"
               >Home <span class="sr-only">(current)</span></a
             >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
@@ -72,35 +69,19 @@
     </nav>
     <!-- end of navbar -->
 
-    <div class="container">
-      <div
-        class="jumbotron card card-image"
-        style="
-          background-image: url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg);
-        "
-      >
-        <div class="text-white text-center py-5 px-4">
-          <div>
-            <h2 class="card-title h1-responsive pt-3 mb-5 font-bold">
-              <strong>Get the latest news and stories with us</strong>
-            </h2>
-            <p class="mx-5 mb-5">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat
-              fugiat, laboriosam, voluptatem, optio vero odio nam sit officia
-              accusamus minus error nisi architecto nulla ipsum dignissimos.
-              Odit sed qui, dolorum!
-            </p>
-            <a class="btn btn-outline-white btn-md"
-              ><i class="fas fa-clone left"></i> View project</a
-            >
-          </div>
-        </div>
-      </div>
+    <div class="jumbotron bg-black" style="color: yellow">
+      <h1 style="color: black" class="text-center">{{source}} homepage</h1>
     </div>
 
-    <div class="container mt-3">
+    <div class="container">
+      <!-- news desc image author url -->
       {% for a,b,c,d,e in context %}
 
+      <!-- <img src="{{c}}" alt="" />
+      <h3>News:</h3>
+      {{new}}
+      <h4>Description:</h4>
+      {{des}}  -->
       <div class="jumbotron text-center hoverable p-4">
         <!-- Grid row -->
         <div class="row">
@@ -109,7 +90,7 @@
             <!-- Featured image -->
             <div class="view overlay">
               <img
-                src="https://images.unsplash.com/photo-1585068974106-96a87ae5cbc7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80"
+                src="{{c}}"
                 class="img-fluid"
                 alt="Sample image for first version of blog listing"
               />
@@ -118,9 +99,7 @@
               </a>
             </div>
           </div>
-          <!-- Grid column -->
 
-          <!-- Grid column -->
           <div class="col-md-7 text-md-left ml-3 mt-3">
             <!-- Excerpt -->
             <a href="#!" class="green-text">
@@ -131,11 +110,11 @@
 
             <p class="font-weight-normal">{{b}}</p>
             <p class="font-weight-normal">
-              by <a><strong>Carine Fox</strong></a
+              by <a><strong>{{d}}</strong></a
               >, 19/08/2016
             </p>
 
-            <a href="/sources/{{e}}" class="btn btn-success">see articles</a>
+            <a href="{{e}}" class="btn btn-success">read more</a>
           </div>
           <!-- Grid column -->
         </div>
