@@ -1,13 +1,10 @@
-# python-flask-nes-API
-An application that  lists and preview news articles from various sources 
+# python-flask-news-API
+An application that  lists and preview 
+news articles from various sources 
 using ptyon flask and the news API
-
-### This project was created:
-#### By **Richard kefa Mcharo**
-
-
-
+---
 ## Getting started
+---
 * Clone the repo
 ```
 git clone https://github.com/jkitsao/python-flask-nes-API.git
@@ -20,14 +17,18 @@ cd python-flask-news-API
 ```
 pip install -r reqiurements.txt
 ```
+---
 
-
-## How to collaborate
+## Create a pull request
 * Fork repository
 * Create a pull request
 * clone to local repository
 
-## Technologies Used
+# Technologies Used
 * ### Flask 
 * ### jinja templets
 * ### News API
+* ### Bootstrap
+
+## License
+MIT &copy;2020 [Kitsao](https://github.com/jkitsao/)
