@@ -69,13 +69,18 @@
     </nav>
     <!-- end of navbar -->
 
-    <div class="jumbotron bg-black" style="color: yellow">
-      <h1 style="color: black" class="text-center">{{source}} homepage</h1>
+    <div class="jumbotron bg-dark">
+      <h1
+        style="color: greenyellow"
+        class="text-center text-capitalize font-weight-bold"
+      >
+        {{source}} homepage
+      </h1>
     </div>
 
     <div class="container">
       <!-- news desc image author url -->
-      {% for a,b,c,d,e in context %}
+      {% for a,b,c,d,e,f in context %}
 
       <!-- <img src="{{c}}" alt="" />
       <h3>News:</h3>
@@ -110,8 +115,7 @@
 
             <p class="font-weight-normal">{{b}}</p>
             <p class="font-weight-normal">
-              by <a><strong>{{d}}</strong></a
-              >, 19/08/2016
+              by <a><strong>{{d}}</strong></a>
             </p>
 
             <a href="{{e}}" class="btn btn-success">read more</a>

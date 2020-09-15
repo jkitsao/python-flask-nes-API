@@ -56,6 +56,7 @@ def article(source):
     img = []
     author=[]
     url=[]
+    date=[]
 
     for i in range(len(articles)):
         myarticles = articles[i]
@@ -66,11 +67,13 @@ def article(source):
         img.append(myarticles['urlToImage'])
         author.append(myarticles['author'])
         url.append(myarticles['url'])
+        date.append(myarticles['publishedAt'])
+
 
 
         
 
-    mylist = zip(news, desc, img,author,url)
+    mylist = zip(news, desc, img,author,url,date)
 
     return render_template('source.html', context=mylist,source=source)
 
